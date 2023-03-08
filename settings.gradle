@@ -1,0 +1,5 @@
+rootProject.name = 'pipelinr-kafka'
+
+includeBuild('weather-provider')
+includeBuild('web-api')
+includeBuild('messagebus')

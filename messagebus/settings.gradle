@@ -1,0 +1,4 @@
+rootProject.name = 'messagebus'
+
+include('core')
+include('kafka')

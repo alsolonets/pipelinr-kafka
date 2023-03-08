@@ -1,0 +1,41 @@
+spring:
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.kafka.KafkaAutoConfiguration
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: com.example.pipelinrkafka.webapi
+
+example:
+  messagebus:
+    kafka:
+      # True to enable message bus support using Kafka.
+      enabled: true
+
+      # Request timeout.
+      timeout: 60000
+
+      # Number of requests this service can process simultaneously. Only has effect
+      # if `example.messagebus.topic.self.request` has value.
+      concurrency: 100
+
+      # The compression type.
+      compression:
+        type: none
+      topic:
+        self:
+          # The request topic of this service. Uncomment to enable requests to it from other services.
+          # request: com.example.pipelinrkafka.webapi.request
+
+          # The reply topic with responses from other services.
+          reply: com.example.pipelinrkafka.webapi.reply
+
+          # How many partitions do the request and reply topics have. This number defines how many instances
+          # of this service can run simultaneously to process incoming requests over the message bus.
+          partitions: 1
+
+        # Request topic for the weather provider.
+        # Find this name in `com.example.pipelinrkafka.weatherprovider.message` package.
+        # Add request topics of other services below to send them requests.
+        weatherprovider: com.example.pipelinrkafka.weatherprovider.request

@@ -1,0 +1,5 @@
+rootProject.name = 'weather-provider'
+
+include('model')
+include('message')
+include('app')

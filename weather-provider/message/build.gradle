@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.example.pipelinrkafka.weatherprovider'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'net.sizovs:pipelinr:0.8'
+    implementation 'com.example.pipelinrkafka.messagebus:core'
+    implementation 'com.example.pipelinrkafka.weatherprovider:model'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
