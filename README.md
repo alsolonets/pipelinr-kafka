@@ -72,4 +72,4 @@ This command sends 100 requests to the Weather API with a concurrency of 50.
 
 # License
 
-This project is open source and available under the MIT License.
+This project is open source and available under the Apache License.
