@@ -58,7 +58,7 @@ Observe in both `Weather Provider` and `Web API` consoles:
 
 # Testing Concurrent Request Processing
 
-Run 5 instances of `Weather Provider`. This number corresponds to the `example.messagebus.kafka.partitions`
+Run 5 instances of `Weather Provider`. This number corresponds to the `example.messagebus.kafka.topic.self.partitions`
 of `Wather Provider's` application.yml.
 
 ```bash
