@@ -28,7 +28,7 @@ public class RequestListener extends RecordMessagingMessageListenerAdapter<Strin
      */
     public RequestListener(@NonNull MessageProcessor messageProcessor) {
         super(null, null);
-        this.setReplyTopic(EMPTY_STRING); // иначе не работает отправка ответа.
+        this.setReplyTopic(EMPTY_STRING); // otherwise response sending won't work.
         this.messageProcessor = messageProcessor;
     }
 
