@@ -6,13 +6,13 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.kafka.support.Acknowledgment;
 
 /**
- * Функция отправки результата в kafka.
+ * The functional interface for sending the response to Kafka.
  */
 @FunctionalInterface
 public interface ResponseSender {
 
     /**
-     * Выполняет отправку результата в kafka.
+     * Sends the response to kafka.
      *
      * @param record         The consumer record containing the request.
      * @param acknowledgment The acknowledgment for committing the message offset.
