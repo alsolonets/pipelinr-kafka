@@ -1,11 +1,12 @@
-Welcome to the Pipelinr Kafka Demo Project! 
-This is an example that demonstrates the use of 
-Pipelinr, Kafka, and Spring Boot to build a message-driven microservice application. 
+Welcome to the PipelinR Kafka Demo Project! This example showcases the integration of the mediator pattern 
+with a message bus to create a message-driven microservice application.
+It leverages [PipelinR](https://github.com/sizovs/PipelinR) as the mediator implementation and 
+[Apache Kafka](https://kafka.apache.org) for the message bus, allowing for seamless communication across microservices.
 Please note that this project is for demonstration purposes only. 
 
 # Features
 
-* Message-driven architecture using Pipelinr, Kafka, and Spring Boot.
+* Message-driven architecture using PipelinR, Kafka, and Spring Boot.
 * Asynchronous request processing with configurable concurrency.
 * Weather API example with a simple request-response flow.
 
@@ -58,8 +59,8 @@ Observe in both `Weather Provider` and `Web API` consoles:
 
 # Testing Concurrent Request Processing
 
-Run 5 instances of `Weather Provider`. This number corresponds to the `example.messagebus.kafka.topic.self.partitions`
-of `Wather Provider's` application.yml.
+Run `5` instances of the Weather Provider application. This number corresponds to the value defined in `example.messagebus.kafka.topic.self.partitions`
+from application.yml.
 
 ```bash
 ab -n 100 -c 50 http://localhost:8080/weather?city=London&unitOfMeasure=Celsius
@@ -68,7 +69,9 @@ This command sends 100 requests to the Weather API with a concurrency of 50.
 
 # Sources and Links
 
-[Synchronous Kafka project](https://github.com/callistaenterprise/blog-synchronous-kafka): The primary inspiration for this project.
+* [Synchronous Kafka project](https://github.com/callistaenterprise/blog-synchronous-kafka): The primary inspiration for this project.
+* [PipelinR](https://github.com/sizovs/PipelinR): The mediator pattern implementation.
+* [Apache Kafka](https://kafka.apache.org): Distributed event streaming platform.
 
 # License
 
